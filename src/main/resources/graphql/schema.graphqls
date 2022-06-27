@@ -1,0 +1,20 @@
+type Query{
+    greets(msg: String!): String
+    authors: [Author!]
+    recentPosts(count: Int, offset: Int!,authorId: ID) : [Post]
+}
+
+type Author{
+    id: ID!
+    name: String
+    email: String!
+    posts: [Post]
+}
+
+type Post {
+    id: ID!
+    title: String!
+    content: String!
+    category:String
+    author: Author!
+}
